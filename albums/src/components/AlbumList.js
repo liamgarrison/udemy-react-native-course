@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import AlbumDetail from './AlbumDetail';
 
-
 class AlbumList extends Component {
   state = {
-    albums: []
+    albums: [],
   };
 
   componentWillMount() {
@@ -15,17 +14,11 @@ class AlbumList extends Component {
   }
 
   renderAlbums() {
-    return this.state.albums.map((album) => 
-        <AlbumDetail key={album.title} album={album} />
-    );
+    return this.state.albums.map(album => <AlbumDetail key={album.title} album={album} />);
   }
 
   render() {
-    return (
-      <View>
-        {this.renderAlbums()}
-      </View>
-    );
+    return <View>{this.renderAlbums()}</View>;
   }
 }
 
